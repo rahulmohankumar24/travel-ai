@@ -49,6 +49,7 @@ router.post('/message', async (req: AuthRequest, res) => {
     const result = await chat(req.userId!, conversationId || null, message);
     res.json({
       conversationId: result.conversationId,
+      content: result.response,
       response: result.response,
       tripPlan: result.tripPlan,
     });
